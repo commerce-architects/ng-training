@@ -1,0 +1,19 @@
+<div class="container">
+	<h2>Example Form</h2>
+	
+	<form #exampleForm="ngForm" (ngSubmit)="onSubmit(exampleForm.value)" >
+		
+		<div class="form-group">
+			<label>Message</label>
+			<input type="text" required class="form-control" #message="ngModel" name="message" [(ngModel)]="myMessage" >
+			<div [hidden]="message.valid || message.pristine" class="alert alert-danger" >
+				Please enter a message
+			</div>
+		</div>
+		
+		<button type="submit" class="btn btn-primary">Submit</button>
+	
+	</form>
+
+	
+</div>						
